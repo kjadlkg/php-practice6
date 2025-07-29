@@ -32,7 +32,11 @@ $result = $stmt->get_result();
 
    <?php while ($post = $result->fetch_assoc()): ?>
       <div>
-         <h3><?= htmlspecialchars($post['username']) ?> 님의 글</h3>
+         <h3>
+            <a href="user/profile.php?user_id=<?= $post['user_id'] ?>">
+               <?= htmlspecialchars($post['username']) ?>
+            </a> 님의 글
+         </h3>
          <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
 
          <?php if ($post['image']): ?>
@@ -79,7 +83,9 @@ $result = $stmt->get_result();
          $comments = $cstmt->get_result();
          while ($comment = $comments->fetch_assoc()): ?>
             <p>
-               <strong><?= htmlspecialchars($comment['username']) ?>:</strong>
+               <strong><a
+                     href="user/profile.php?user_id=<?= $comment['user_id'] ?>"><?= htmlspecialchars($comment['username']) ?>:</a>
+               </strong>
                <?= htmlspecialchars($comment['content']) ?>
 
                <!-- 댓글 좋아요 버튼 -->

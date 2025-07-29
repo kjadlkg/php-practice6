@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
+   <a href="../login.php">뒤로</a>
    <form method="post">
       <input type="text" name="username" placeholder="이름" minlength="2" maxlength="10">
       <input type="email" name="email" placeholder="이메일" minlength="5" maxlength="30">

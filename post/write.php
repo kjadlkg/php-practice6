@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
+   <a href="../index.php">뒤로</a>
    <form method="post" enctype="multipart/form-data">
       <textarea name="content" autocomplete="off" maxlength="400" placeholder="일상을 공유해주세요"></textarea>
       <input type="file" name="image" placeholder="이미지 업로드">

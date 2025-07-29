@@ -20,7 +20,7 @@ if (!$post || $post['user_id'] != $user_id) {
 
 // 게시글에 이미지가 있으면 삭제
 if (!empty($post['image'])) {
-   $file_path = "../uploads/" . $post['image_path'];
+   $file_path = "../uploads/" . $post['image'];
    if (file_exists($file_path)) {
       unlink($file_path);
    }

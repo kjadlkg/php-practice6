@@ -35,7 +35,11 @@ if ($keyword !== '') {
       <?php if ($results->num_rows > 0): ?>
          <ul>
             <?php while ($user = $results->fetch_assoc()): ?>
-               <li><?= htmlspecialchars($user['username']) ?></li>
+               <li>
+                  <a href="../user/profile.php?user_id=<?= $user['id'] ?>">
+                     <?= htmlspecialchars($user['username']) ?>
+                  </a>
+               </li>
             <?php endwhile; ?>
          </ul>
       <?php else: ?>
