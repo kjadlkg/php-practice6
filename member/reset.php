@@ -45,21 +45,52 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>비밀번호를 잊으셨나요?</title>
+   <link rel="stylesheet" href="../css/reset.css">
+   <link rel="stylesheet" href="../css/member.css">
 </head>
 
 <body>
-   <a href="../login.php">뒤로</a>
-   <h3>비밀번호 재설정</h3>
-   <form method="post">
-      <input type="hidden" name="email" value="<?= htmlspecialchars($email) ?>">
-      <input type="password" name="new_password" placeholder="새 비밀번호" minlength="8" maxlength="30">
-      <input type="password" name="confirm_password" placeholder="새 비밀번호 확인" minlength="8" maxlength="30">
-      <button type="submit">변경</button>
-   </form>
-
-   <?php if ($message): ?>
-      <p><?= $message ?></p>
-   <?php endif; ?>
+   <div class="banner">
+      <div class="logo">
+         <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+      </div>
+   </div>
+   <div class="forgot_wrap">
+      <div class="account_search">
+         <div class="head">
+            <h3>비밀번호 재설정</h3>
+         </div>
+         <form method="post">
+            <input type="hidden" name="email" value="<?= htmlspecialchars($email) ?>">
+            <div class="forgot_input first">
+               <input type="password" class="input_text" name="new_password" placeholder="새 비밀번호" minlength="8"
+                  maxlength="30">
+            </div>
+            <div class="forgot_input second">
+               <input type="password" class="input_text" name="confirm_password" placeholder="새 비밀번호 확인" minlength="8"
+                  maxlength="30">
+            </div>
+            <div class="forgot_btn">
+               <div class="clearfix">
+                  <div class="message">
+                     <?php if ($message): ?>
+                        <p><?= $message ?></p>
+                     <?php endif; ?>
+                  </div>
+                  <div class="fr">
+                     <button type="button" onclick="location.href='login.php'">취소</button>
+                     <button type="submit">변경</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="footer">
+      <div id="footer">
+         kjadlkg © 2025
+      </div>
+   </div>
 </body>
 
 </html>

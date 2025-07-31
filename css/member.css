@@ -1,0 +1,322 @@
+.account_search {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px #0000001a, 0 2px 4px #0000001a;
+  margin: auto;
+  width: 500px;
+}
+
+.banner {
+  height: 56px;
+}
+
+.banner img {
+  margin-left: 18px;
+  margin-top: 3px;
+  width: 150px;
+}
+
+.clearfix::after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.content p {
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  margin: 16px;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+#footer {
+  color: #737373;
+  margin: 0 auto;
+  width: 980px;
+}
+
+.forgot {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.forgot a {
+  color: #0866ff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.forgot_btn {
+  border-top: 1px solid #dadde1;
+  padding: 16px;
+}
+
+.forgot_btn button {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 36px;
+  margin-left: 8px;
+  padding: 0 20px;
+}
+
+.forgot_btn button:first-child {
+  background: #e4e6eb;
+  color: #4b4f56;
+}
+
+.forgot_btn .message {
+  display: inline-block;
+  padding-top: 8px;
+  padding-left: 8px;
+  color: #fa383e;
+  width: 280px;
+}
+
+.forgot_input {
+  margin: 16px;
+}
+
+.forgot_input.first {
+  margin-bottom: 0;
+}
+
+.forgot_input.second {
+  margin-top: 8px;
+}
+
+.forgot_input .input_text {
+  width: 444px;
+  padding: 16px 0 16px 16px;
+}
+
+.forgot_wrap {
+  background: #e9ebee;
+  padding: 80px 0;
+}
+
+.fr {
+  float: right;
+}
+
+.go_login {
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+}
+
+.go_login a {
+  color: #1877f2;
+  font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.head {
+  border-bottom: 1px solid #dadde1;
+  padding-bottom: 0;
+}
+
+.head h3 {
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: -15px;
+  padding: 18px 16px 18px 18px;
+}
+
+#login_container {
+  padding-top: 72px;
+  padding-bottom: 112px;
+  background: #f2f4f7;
+  min-width: 500px;
+}
+
+.login_wrap {
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  width: 980px;
+}
+
+.login_wrap .logo_box {
+  box-sizing: border-box;
+  margin-right: 0;
+  padding-right: 32px;
+  width: 580px;
+}
+
+.login_wrap .logo_box,
+.login_wrap .login_box {
+  display: inline-block;
+  vertical-align: top;
+}
+.login_wrap .logo_box h2 {
+  display: inline-block;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  width: 500px;
+  padding: 0 0 20px;
+}
+
+.login_wrap .logo_box .logo {
+  padding: 112px 0 16px;
+}
+
+.login_wrap .logo_box .logo img {
+  height: 106px;
+  margin: -28px;
+}
+
+.login_wrap .login_box {
+  text-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+  box-sizing: border-box;
+  margin: 40px 0 0;
+  padding: 20px 0 28px;
+  width: 396px;
+}
+
+.login_wrap .login_box .login_input {
+  font-size: 17px;
+  width: 364px;
+}
+
+.login_input {
+  display: inline-block;
+  margin: auto;
+  padding: 6px 0;
+}
+
+.input_text {
+  background: #fff;
+  padding: 14px 16px;
+  width: 330px;
+  height: 22px;
+  line-height: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  font-size: 17px;
+  vertical-align: middle;
+}
+
+.login_btn,
+.login_btn_new {
+  display: inline-block;
+  margin: auto;
+  padding-top: 6px;
+}
+
+.login_btn button {
+  background: #0866ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 48px;
+  padding: 0 16px;
+  width: 363.6px;
+}
+
+.line {
+  align-items: center;
+  border-bottom: 1px solid #dadde1;
+  display: flex;
+  margin: 20px 16px;
+  text-align: center;
+}
+
+.login_btn_new button {
+  background: #42b72a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 48px;
+  padding: 0 16px;
+}
+
+.register_btn {
+  text-align: center;
+}
+
+.register_btn button {
+  background: #42b72a;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  height: 36px;
+  padding: 0 32px;
+  width: 194px;
+  margin: 10px 0;
+}
+
+#register_container {
+  background: #f2f4f7;
+  height: 600px;
+}
+
+#register_container .logo {
+  text-align: center;
+}
+
+#register_container .logo img {
+  height: 100px;
+}
+
+.register_wrap {
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  width: 432px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+}
+
+.register_wrap .register_input {
+  margin-bottom: 10px;
+}
+
+.register_wrap .register_input .input_text {
+  padding: 11px;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 375px;
+}
+
+.register_wrap .content {
+  border-top: 1px solid #dadde1;
+  padding: 16px;
+}
+
+.register_wrap .title {
+  padding: 0 16px 20px 16px;
+}
+
+.register_wrap .title h3 {
+  font-size: 25px;
+  text-align: center;
+}

@@ -33,20 +33,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>비밀번호를 잊으셨나요?</title>
+   <link rel="stylesheet" href="../css/reset.css">
+   <link rel="stylesheet" href="../css/member.css">
 </head>
 
 <body>
-   <a href="../login.php">뒤로</a>
-   <h3>내 계정 찾기</h3>
-   <form method="post">
-      <p>계정을 검색하려면 이메일 주소를 입력하세요.</p>
-      <input type="email" name="email" placeholder="이메일 주소" minlength="5" maxlength="30">
-      <button type="submit">확인</button>
-   </form>
-
-   <?php if ($message): ?>
-      <p><?= $message ?></p>
-   <?php endif; ?>
+   <div class="banner">
+      <div class="logo">
+         <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+      </div>
+   </div>
+   <div class="forgot_wrap">
+      <div class="account_search">
+         <div class="head">
+            <h3>내 계정 찾기</h3>
+         </div>
+         <div class="content">
+            <p>계정을 검색하려면 이메일 주소를 입력하세요.</p>
+         </div>
+         <form method="post">
+            <div class="forgot_input">
+               <input type="email" class="input_text" name="email" placeholder="이메일 주소" minlength="5" maxlength="30">
+            </div>
+            <div class="forgot_btn">
+               <div class="clearfix">
+                  <div class="message">
+                     <?php if ($message): ?>
+                        <p><?= $message ?></p>
+                     <?php endif; ?>
+                  </div>
+                  <div class="fr">
+                     <button type="button" onclick="location.href='login.php'">취소</button>
+                     <button type="submit">확인</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="footer">
+      <div id="footer">
+         kjadlkg © 2025
+      </div>
+   </div>
 </body>
 
 </html>
