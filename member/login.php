@@ -18,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          echo "<script>location.href='../index.php';</script>";
          exit;
       } else {
-         echo "<script>alert('비밀번호가 올바르지 않습니다.');</script>";
+         echo "<script>alert('비밀번호가 올바르지 않습니다.'); history.back();</script>";
       }
    } else {
-      echo "<script>alert('이메일을 찾을 수 없습니다.');</script>";
+      echo "<script>alert('이메일을 찾을 수 없습니다.'); history.back();</script>";
    }
 }
 ?>
@@ -43,7 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          <div class="login_wrap">
             <div class="logo_box">
                <div class="logo">
-                  <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+                  <a href="../index.php">
+                     <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+                  </a>
                </div>
                <h2>facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</h2>
             </div>

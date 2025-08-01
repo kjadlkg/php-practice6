@@ -31,7 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    <div id="register_container">
       <div class="logo_box">
          <div class="logo">
-            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+            <a href="../index.php">
+               <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="facebook">
+            </a>
          </div>
       </div>
       <div class="register_wrap">

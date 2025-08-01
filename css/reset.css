@@ -15,6 +15,13 @@ body {
 }
 
 button {
-  cursor: pointer;
   display: inline-block;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
 }
