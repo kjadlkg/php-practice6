@@ -1,0 +1,169 @@
+.edit_profile {
+  height: 72px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.edit_dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 10;
+  padding: 10px;
+  min-width: 150px;
+}
+
+.edit_dropdown button {
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.edit_dropdown button:hover {
+  background: #f0f0f0;
+}
+
+.profile_background {
+  position: relative;
+  overflow: hidden;
+  width: 940px;
+  height: 348px;
+  z-index: 0;
+}
+
+.profile_background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile_btn_box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.profile_btn_box a,
+.btn_edit {
+  background: #e2e5e9;
+  color: #080809;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.profile_btn_box .btn_blue {
+  background: #0866ff;
+  color: #fff;
+}
+
+.profile_image {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+  margin-top: -88.8px;
+  cursor: pointer;
+}
+
+.profile_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile_image::after,
+.profile_background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.profile_image:hover::after,
+.profile_background:hover::after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.profile_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 876px;
+  height: 84px;
+  padding-bottom: 16px;
+  z-index: 2;
+}
+
+.profile_text_box {
+  flex: 1;
+}
+
+.profile_text_box .username,
+.profile_text_box .profile_text_bottom_box {
+  display: flex;
+  justify-content: left;
+}
+
+.profile_text_box .username {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.profile_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_wrap .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0 16px;
+  width: 908px;
+  height: 60px;
+  border-top: 3px solid #f2f4f7;
+}
+
+.profile_wrap .nav div {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.profile_wrap .history_post {
+  width: 100%;
+  background: #f2f4f7;
+}
+
+.profile_wrap .history_post li {
+  width: 100%;
+  background: #f2f4f7;
+  padding: 8px;
+  margin: 10px;
+}

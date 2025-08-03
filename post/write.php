@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $image_path = null;
    if (!empty($_FILES['image']['name'])) {
       $filename = time() . '_' . basename($_FILES['image']['name']);
-      $target_path = "../uploads/" . $filename;
+      $target_path = "../uploads/post" . $filename;
       move_uploaded_file($_FILES['image']['tmp_name'], $target_path);
       $image_path = $filename;
    }

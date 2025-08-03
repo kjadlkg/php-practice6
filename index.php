@@ -4,7 +4,7 @@ include "resource/db.php";
 
 // 게시글 목록
 $stmt = $db->prepare("
-   SELECT p.*, u.username
+   SELECT p.*, u.username, u.profile_image
    FROM posts p JOIN users u
    ON p.user_id = u.id
    ORDER BY p.created_at DESC
@@ -55,7 +55,7 @@ $result = $stmt->get_result();
                <h1 class="blind">게시글 영역</h1>
                <div class="user_info">
                   <div class="image">
-                     <img src="images/icon/profile.png">
+                     <img src="uploads/profile/<?= $post['profile_image'] ?? 'default_profile.png' ?>" alt="프로필 이미지">
                   </div>
                   <div class="user_text">
                      <a href="user/profile.php?user_id=<?= $post['user_id'] ?>">
@@ -117,7 +117,7 @@ $result = $stmt->get_result();
                   while ($comment = $comments->fetch_assoc()): ?>
                      <div class="user_info">
                         <div class="image">
-                           <img src="images/icon/profile.png">
+                           <img src="uploads/profile/<?= $comment['profile_image'] ?? 'default_profile.png' ?>" alt="프로필 이미지">
                         </div>
                         <div class="content">
                            <div class="user_text">
@@ -159,9 +159,8 @@ $result = $stmt->get_result();
                   <div class="comment_box">
                      <div class="user_info">
                         <div class="image">
-                           <?php if (empty($comment['profile_image'])): ?>
-                              <img src="images/icon/profile.png">
-                           <?php endif; ?>
+                           <img src="uploads/profile/<?= $comment['profile_image'] ?? 'default_profile.png' ?>"
+                              alt="프로필 이미지">
                         </div>
                      </div>
                      <form method="post" action="comment/add.php" onsubmit="return setComment(this)">
