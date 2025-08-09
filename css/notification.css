@@ -1,0 +1,41 @@
+#noti_all_read {
+  color: #0064d1;
+  font-size: 15px;
+  padding: 0 16px;
+  margin-top: 16px;
+}
+
+.noti_head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noti_head h4 {
+  font-size: 17px;
+  padding: 0 16px;
+  margin-top: 16px;
+}
+
+.noti_wrap .head {
+  width: 100%;
+  border-bottom: 1px solid #dadde1;
+}
+
+.noti_wrap .head h3 {
+  margin-top: 0;
+}
+
+.noti_wrap ul {
+  padding: 0 16px;
+  margin-top: 8px;
+}
+
+.noti_wrap ul li {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.noti_wrap ul li button {
+  color: #0064d1;
+  font-size: 15px;
+}

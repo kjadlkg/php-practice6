@@ -1,0 +1,53 @@
+.post_input {
+  outline: none;
+  max-height: 490px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-size: 25px;
+}
+
+.post_input:empty::before {
+  content: attr(data-placeholder);
+  color: #65686c;
+  pointer-events: none;
+  display: block;
+}
+
+.post_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.post_wrap .head {
+  width: 100%;
+  border-bottom: 1px solid #dadde1;
+}
+
+.post_wrap .head h3 {
+  margin-top: 0;
+}
+
+.post_wrap .user_info {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0 16px;
+  padding: 16px 0;
+}
+
+.post_wrap .user_info .image {
+  width: 40px;
+  height: 40px;
+  margin-right: 11px;
+}
+
+.post_wrap form {
+  padding: 0 16px 40px 16px;
+  font-size: 30px;
+}
+
+.post_wrap form .post_bottom_box {
+  border: none;
+  border-top: 1px solid #dadde1;
+}

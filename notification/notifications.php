@@ -1,6 +1,8 @@
 <?php
-require_once "../resource/require_login.php";
-include "../resource/db.php";
+require_once __DIR__ . "/../resource/require_login.php";
+include __DIR__ . "/../resource/db.php";
+
+header('Content-Type: application/json; charset-utf-8');
 
 $user_id = $_SESSION['id'];
 
@@ -10,29 +12,22 @@ $stmt->execute();
 $notifications = $stmt->get_result();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>내 알림</title>
-</head>
-
-<body>
-   <h2>내 알림</h2>
-   <a href="../index.php">뒤로</a>
+<div class="noti_wrap">
+   <div class="head">
+      <h3>알림</h3>
+   </div>
+   <div class="noti_head">
+      <h4>이전 알림</h4>
+      <button type="button" id="noti_all_read">모두 읽음</button>
+   </div>
    <ul>
       <?php while ($notification = $notifications->fetch_assoc()): ?>
-         <li>
-            <?= htmlspecialchars($notification['message']) ?> (<?= $notification['created_at'] ?>)
-            <?php if (!$notification['is_read']): ?>
-               <a href="read.php?id=<?= $notification['id'] ?>">확인</a>
-            <?php endif; ?>
-         </li>
+      <li class="notification_item" data-id="<?= $notification['id'] ?>" data-url="#">
+         <?= htmlspecialchars($notification['message']) ?> (<?= $notification['created_at'] ?>)
+         <?php if (!$notification['is_read']): ?>
+         <button type="button" class="noti_read">확인</button>
+         <?php endif; ?>
+      </li>
       <?php endwhile; ?>
    </ul>
-
-</body>
-
-</html>
+</div>

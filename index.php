@@ -1,6 +1,6 @@
 <?php
-require_once "resource/require_login.php";
-include "resource/db.php";
+require_once __DIR__ . "/resource/require_login.php";
+include __DIR__ . "/resource/db.php";
 
 // 게시글 목록
 $stmt = $db->prepare("
@@ -23,6 +23,9 @@ $result = $stmt->get_result();
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/member.css">
    <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/search.css">
+   <link rel="stylesheet" href="css/notification.css">
+   <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -34,9 +37,9 @@ $result = $stmt->get_result();
             </a>
          </div>
          <div class="menu">
-            <a href="post/write.php">글쓰기</a>
-            <a href="search/search.php">친구 찾기</a>
-            <button type="button" onclick="location.href='notification/notifications.php'">
+            <button type="button" class="btn_menu_text" onclick="openModal('post/write.php')">글쓰기</button>
+            <button type="button" class="btn_menu_text" onclick="openModal('search/search.php')">친구 찾기</button>
+            <button type="button" onclick="openModal('notification/notifications.php')">
                <img src="images/icon/notifications.png" alt="알림">
             </button>
             <button type="button" onclick="location.href='user/profile.php'">
@@ -55,7 +58,9 @@ $result = $stmt->get_result();
                <h1 class="blind">게시글 영역</h1>
                <div class="user_info">
                   <div class="image">
-                     <img src="uploads/profile/<?= $post['profile_image'] ?? 'default_profile.png' ?>" alt="프로필 이미지">
+                     <a href="user/profile.php?user_id=<?= $post['user_id'] ?>">
+                        <img src="uploads/profile/<?= $post['profile_image'] ?? 'default_profile.png' ?>" alt="프로필 이미지">
+                     </a>
                   </div>
                   <div class="user_text">
                      <a href="user/profile.php?user_id=<?= $post['user_id'] ?>">
@@ -78,7 +83,7 @@ $result = $stmt->get_result();
                <div class="content">
                   <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                   <?php if ($post['image']): ?>
-                     <img src="uploads/<?= htmlspecialchars($post['image']) ?>" width="200">
+                     <img src="uploads/post/<?= htmlspecialchars($post['image']) ?>">
                   <?php endif; ?>
                </div>
                <div class="post_bottom_box">
@@ -117,7 +122,10 @@ $result = $stmt->get_result();
                   while ($comment = $comments->fetch_assoc()): ?>
                      <div class="user_info">
                         <div class="image">
-                           <img src="uploads/profile/<?= $comment['profile_image'] ?? 'default_profile.png' ?>" alt="프로필 이미지">
+                           <a href="user/profile.php?user_id=<?= $comment['user_id'] ?>">
+                              <img src="uploads/profile/<?= $comment['profile_image'] ?? 'default_profile.png' ?>"
+                                 alt="프로필 이미지">
+                           </a>
                         </div>
                         <div class="content">
                            <div class="user_text">
@@ -151,7 +159,6 @@ $result = $stmt->get_result();
                                  <button type="submit" onclick="return confirm('댓글을 삭제하시겠습니까?')">삭제</button>
                               </form>
                            <?php endif; ?>
-                           </p>
                         </div>
                      </div>
                   <?php endwhile; ?>
@@ -175,6 +182,14 @@ $result = $stmt->get_result();
          </div>
       <?php endwhile; ?>
    </div>
+   <!-- 모달 -->
+   <div id="modal">
+      <div id="modal_content"></div>
+      <button type="button" onclick="closeModal()">
+         <img src="images/icon/close.png" alt="닫기">
+      </button>
+   </div>
+   <script src="js/modal.js"></script>
 </body>
 <script>
    function setComment(form) {
