@@ -1,6 +1,6 @@
 <?php
-include "../resource/db.php";
 session_start();
+include "../resource/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = trim($_POST["username"]);
